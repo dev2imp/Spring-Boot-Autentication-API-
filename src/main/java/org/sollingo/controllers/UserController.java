@@ -3,6 +3,7 @@ package org.sollingo.controllers;
 import org.sollingo.dto.AuthResponse;
 import org.sollingo.dto.LoginRequest;
 import org.sollingo.dto.RegisterRequest;
+import org.sollingo.dto.UsersResponse;
 import org.sollingo.entity.UserEntity;
 import org.sollingo.services.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,6 @@ public class UserController {
     public AuthResponse login(@RequestBody LoginRequest request) {
         return userService.login(request.getEmail(), request.getPassword());
     }
-
     @PostMapping("/api/register")
     public AuthResponse register(@RequestBody RegisterRequest request) {
         return userService.register(
@@ -30,9 +30,8 @@ public class UserController {
                 request.getPassword()
         );
     }
-
     @GetMapping("api/users")
-    public List<UserEntity> getAllUsers(){
+    public List<UsersResponse> getAllUsers(){
         return userService.getUsers();
     }
 

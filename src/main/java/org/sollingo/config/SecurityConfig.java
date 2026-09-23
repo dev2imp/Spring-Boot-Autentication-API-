@@ -19,7 +19,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/login", "/api/register").permitAll() // your login/register endpoints
+                        .requestMatchers("/api/login", "/api/register","/api/users").permitAll() // your login/register endpoints
                         .anyRequest().authenticated()
                 );
         return http.build();

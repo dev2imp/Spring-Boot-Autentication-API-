@@ -1,5 +1,6 @@
 package org.sollingo.repository;
 
+import org.sollingo.dto.UsersResponse;
 import org.sollingo.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

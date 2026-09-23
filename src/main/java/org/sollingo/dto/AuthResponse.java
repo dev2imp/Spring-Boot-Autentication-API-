@@ -22,11 +22,9 @@ public class AuthResponse {
     public static AuthResponse success(String email, String token) {
         return new AuthResponse(true, email, "Success", null, token);
     }
-
     public static AuthResponse failure(String email, String message, AuthError errorCode) {
         return new AuthResponse(false, email, message, errorCode, null);
     }
-
     public boolean isSuccess() { return success; }
     public String getEmail() { return email; }
     public String getMessage() { return message; }
